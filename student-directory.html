@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Directory · Student Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="mark">R</div>
+      <h1>Registrar's&nbsp;Desk</h1>
+      <p>Student Records</p>
+    </div>
+    <nav class="nav">
+      <a href="student-directory.html" class="active"><span class="tab-num">01</span> Browse Students</a>
+    </nav>
+    <div class="sidebar-foot">DATA STORED LOCALLY<br>IN THIS BROWSER</div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <div>
+        <p class="eyebrow">Student Directory</p>
+        <h2 id="pageHeading">Browse Students</h2>
+        <p class="desc">Look up classmates by name, course or year. This view is read-only.</p>
+      </div>
+    </div>
+
+    <div class="view-only-note">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+      You're viewing as a student — records here are view-only.
+    </div>
+
+    <div id="meCard"></div>
+
+    <div class="stat-grid" id="statGrid"></div>
+
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="searchInput" placeholder="Search by name…">
+      </div>
+
+      <div class="field">
+        <label for="courseFilter">Course</label>
+        <select id="courseFilter"><option value="">All courses</option></select>
+      </div>
+
+      <div class="field">
+        <label for="yearFilter">Year</label>
+        <select id="yearFilter"><option value="">All years</option></select>
+      </div>
+
+      <div class="field">
+        <label>&nbsp;</label>
+        <button class="btn btn-ghost btn-sm" id="clearFilters">Clear filters</button>
+      </div>
+
+      <div class="count-pill" id="countPill">0 students</div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Course</th>
+            <th>Year</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div class="table-empty hidden" id="emptyState">
+        <div class="big">No matching students</div>
+        <div>Try adjusting your search or filters.</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/student-directory.js"></script>
+</body>
+</html>

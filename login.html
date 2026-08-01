@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In · Student Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+
+  <div class="login-wrap">
+    <div class="login-brand">
+      <div class="mark">R</div>
+      <h1>Registrar's Desk</h1>
+      <p>Student Management System</p>
+    </div>
+    <p class="login-sub">Sign in to continue. Admin requires a username and password; Student must enter a name that's already on record.</p>
+
+    <div class="role-grid">
+
+      <div class="role-card">
+        <div class="role-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h2>Admin</h2>
+        <p>Add, edit and delete student records, filter and search the full list, and view the dashboard statistics.</p>
+
+        <label for="adminUsername">Username</label>
+        <input type="text" id="adminUsername" placeholder="admin" autocomplete="username">
+
+        <label for="adminPassword">Password</label>
+        <input type="password" id="adminPassword" placeholder="\u2022\u2022\u2022\u2022\u2022" autocomplete="current-password">
+
+        <p class="login-error" id="adminError">Incorrect username or password.</p>
+
+        <button class="btn btn-brass" id="adminBtn" type="button">Sign In as Admin</button>>
+      </div>
+
+      <div class="role-card student">
+        <div class="role-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/></svg>
+        </div>
+        <h2>Student</h2>
+        <p>Browse students by name, course or year — view-only, no editing, adding or deleting.</p>
+        <label for="studentName">Your registered name</label>
+        <input type="text" id="studentName" placeholder="e.g. Amara Uwase" list="registeredNames" autocomplete="off">
+        <datalist id="registeredNames"></datalist>
+        <p class="login-error" id="studentError">That name isn't in the student records. Check the spelling, or ask your admin to add you first.</p>
+        <button class="btn btn-ghost" id="studentBtn" type="button">Continue as Student</button>
+      </div>
+
+    </div>
+  </div>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

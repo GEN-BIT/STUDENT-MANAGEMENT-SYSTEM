@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Student · Student Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="mark">R</div>
+      <h1>Registrar's&nbsp;Desk</h1>
+      <p>Student Records</p>
+    </div>
+    <nav class="nav">
+      <a href="index.html"><span class="tab-num">01</span> Dashboard</a>
+      <a href="students.html"><span class="tab-num">02</span> Student List</a>
+      <a href="add-student.html" class="active"><span class="tab-num">03</span> Add Student</a>
+    </nav>
+    <div class="sidebar-foot">DATA STORED LOCALLY<br>IN THIS BROWSER</div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <div>
+        <p class="eyebrow" id="formEyebrow">New Entry</p>
+        <h2 id="formTitle">Add Student</h2>
+        <p class="desc" id="formDesc">Enter the student's details below. Fields marked <span>*</span> are required.</p>
+      </div>
+    </div>
+
+    <form class="card form-card" id="studentForm" novalidate>
+      <div class="form-grid">
+
+        <div class="form-field full" id="field-name">
+          <label for="name">Full Name<span class="req">*</span></label>
+          <input type="text" id="name" placeholder="e.g. Amara Uwase" autocomplete="off">
+          <div class="error-text">Please enter the student's full name.</div>
+        </div>
+
+        <div class="form-field" id="field-email">
+          <label for="email">Email Address<span class="req">*</span></label>
+          <input type="email" id="email" placeholder="name@mail.com" autocomplete="off">
+          <div class="error-text">Enter a valid, unused email address.</div>
+        </div>
+
+        <div class="form-field" id="field-phone">
+          <label for="phone">Phone Number<span class="req">*</span></label>
+          <input type="tel" id="phone" placeholder="07XX XXX XXX" autocomplete="off">
+          <div class="error-text">Enter a valid phone number.</div>
+        </div>
+
+        <div class="form-field" id="field-gender">
+          <label for="gender">Gender<span class="req">*</span></label>
+          <select id="gender">
+            <option value="">Select gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+          <div class="error-text">Please select a gender.</div>
+        </div>
+
+        <div class="form-field" id="field-course">
+          <label for="course">Course<span class="req">*</span></label>
+          <input type="text" id="course" placeholder="e.g. Computer Science" list="courseSuggestions" autocomplete="off">
+          <datalist id="courseSuggestions"></datalist>
+          <div class="error-text">Please enter the course name.</div>
+        </div>
+
+        <div class="form-field" id="field-year">
+          <label for="year">Year of Study<span class="req">*</span></label>
+          <select id="year">
+            <option value="">Select year</option>
+            <option value="1">Year 1</option>
+            <option value="2">Year 2</option>
+            <option value="3">Year 3</option>
+            <option value="4">Year 4</option>
+            <option value="5">Year 5</option>
+          </select>
+          <div class="error-text">Please select a year of study.</div>
+        </div>
+
+        <div class="form-field" id="field-regDate">
+          <label for="regDate">Registration Date<span class="req">*</span></label>
+          <input type="date" id="regDate">
+          <div class="error-text">Please select a registration date.</div>
+        </div>
+
+      </div>
+
+      <div class="form-note" id="idNote">A registration ID will be generated automatically once saved.</div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost" id="cancelBtn">Cancel</button>
+        <button type="submit" class="btn btn-brass" id="submitBtn">Save Student</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/add-student.js"></script>
+</body>
+</html>

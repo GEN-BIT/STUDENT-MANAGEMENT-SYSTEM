@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard · Student Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="mark">R</div>
+      <h1>Registrar's&nbsp;Desk</h1>
+      <p>Student Records</p>
+    </div>
+    <nav class="nav">
+      <a href="index.html" class="active"><span class="tab-num">01</span> Dashboard</a>
+      <a href="students.html"><span class="tab-num">02</span> Student List</a>
+      <a href="add-student.html"><span class="tab-num">03</span> Add Student</a>
+    </nav>
+    <div class="sidebar-foot">DATA STORED LOCALLY<br>IN THIS BROWSER</div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <div>
+        <p class="eyebrow">Overview</p>
+        <h2>Dashboard</h2>
+        <p class="desc">A snapshot of everyone currently on the roll — totals, gender split, and the latest registrations.</p>
+      </div>
+      <a href="add-student.html" class="btn btn-brass">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+        Add Student
+      </a>
+    </div>
+
+    <div class="stat-grid" id="statGrid"></div>
+
+    <div class="panel-grid">
+      <div class="card panel">
+        <h3>Students by Course</h3>
+        <p class="panel-sub">Distribution across enrolled courses</p>
+        <div id="courseBars"></div>
+      </div>
+
+      <div class="card panel">
+        <h3>Recently Registered</h3>
+        <p class="panel-sub">Last five students added to the system</p>
+        <div id="recentList"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

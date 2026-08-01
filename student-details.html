@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Details · Student Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="mark">R</div>
+      <h1>Registrar's&nbsp;Desk</h1>
+      <p>Student Records</p>
+    </div>
+    <nav class="nav" id="sidebarNav">
+      <a href="index.html"><span class="tab-num">01</span> Dashboard</a>
+      <a href="students.html" class="active"><span class="tab-num">02</span> Student List</a>
+      <a href="add-student.html"><span class="tab-num">03</span> Add Student</a>
+    </nav>
+    <div class="sidebar-foot">DATA STORED LOCALLY<br>IN THIS BROWSER</div>
+  </aside>
+
+  <main class="main" id="mainContent">
+    <a href="students.html" class="back-link" id="backLink">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span id="backLinkText">Back to Student List</span>
+    </a>
+
+    <div class="page-head">
+      <div>
+        <p class="eyebrow">Student Record</p>
+        <h2>Student Details</h2>
+        <p class="desc">Full record on file for this student.</p>
+      </div>
+      <div id="actionBtns"></div>
+    </div>
+
+    <div id="detailsWrap"></div>
+  </main>
+</div>
+
+<!-- Delete confirmation modal -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal">
+    <h3>Remove this student?</h3>
+    <p>You're about to delete <strong id="deleteName"></strong> from the records. This cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="cancelDelete">Cancel</button>
+      <button class="btn" id="confirmDelete">Delete Student</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/student-details.js"></script>
+
+</body>
+</html>
